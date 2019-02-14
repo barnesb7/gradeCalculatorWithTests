@@ -1,6 +1,8 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 
@@ -28,6 +30,20 @@ public class GradeCalculatorTest {
 
          String thirdLetterGrade = gradeCalculator.getLetterGrade(thirdGradePercentage);
          assertEquals("F", thirdLetterGrade);
+    }
+
+    @Test
+    public void shouldReturnAveragePercentWhenGivenCollectionOfPercentageGrades(){
+        int expectedAveragePercentage = 10;
+
+        ArrayList<Integer> grades = new ArrayList<>();
+        grades.add(10);
+        grades.add(15);
+        grades.add(5);
+
+         int actualAveragePercentage= gradeCalculator.getAveragePercentageOfGrades(grades);
+
+         assertEquals(expectedAveragePercentage, actualAveragePercentage);
     }
 
 

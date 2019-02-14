@@ -1,9 +1,23 @@
+import java.util.ArrayList;
+
 public class GradeCalculator {
 
 
     public String getLetterGrade(int percentage){
 
       return checkPercentageForGrade(percentage);
+
+    }
+
+    public int getAveragePercentageOfGrades(ArrayList<Integer> grades){
+
+        int gradeSum = 0;
+
+        for(Integer grade: grades){
+            gradeSum += grade;
+        }
+
+        return gradeSum/grades.size();
 
     }
 
