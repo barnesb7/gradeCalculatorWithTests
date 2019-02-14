@@ -17,10 +17,15 @@ public class GradeCalculator {
             gradeSum += grade;
         }
 
-        return gradeSum/grades.size();
+        try{
 
+            return gradeSum/grades.size();
+
+        } catch(ArithmeticException ex){
+            ex.printStackTrace();
+            return 0;
+        }
     }
-
 
     private String checkPercentageForGrade(int percentage){
         if(percentage <= 100  && percentage > 89){

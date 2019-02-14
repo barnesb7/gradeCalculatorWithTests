@@ -35,15 +35,27 @@ public class GradeCalculatorTest {
     @Test
     public void shouldReturnAveragePercentWhenGivenCollectionOfPercentageGrades(){
         int expectedAveragePercentage = 10;
+        int expectedZeroForAllGrades = 0;
 
         ArrayList<Integer> grades = new ArrayList<>();
         grades.add(10);
         grades.add(15);
         grades.add(5);
 
-         int actualAveragePercentage= gradeCalculator.getAveragePercentageOfGrades(grades);
+         int actualAveragePercentage = gradeCalculator.getAveragePercentageOfGrades(grades);
 
          assertEquals(expectedAveragePercentage, actualAveragePercentage);
+
+
+         ArrayList<Integer> zeroGrades = new ArrayList<>();
+         grades.add(0);
+         grades.add(0);
+         grades.add(0);
+
+         int actualZeroForAllGrades = gradeCalculator.getAveragePercentageOfGrades(zeroGrades);
+
+         assertEquals(expectedZeroForAllGrades, actualZeroForAllGrades);
+
     }
 
 
